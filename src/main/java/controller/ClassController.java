@@ -19,7 +19,7 @@ import entity.model.Course;
 
 import entity.model.Class;
 
-@WebServlet({ "/classpage", "/class-add", "/class-edit", "/class-delete" })
+@WebServlet(urlPatterns = { "/classpage", "/class-add", "/class-edit", "/class-delete" },loadOnStartup=1)
 public class ClassController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private CourseService coService;

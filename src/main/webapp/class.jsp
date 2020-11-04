@@ -27,6 +27,7 @@
 				<tr>
 					<td>ID</td>
 					<td>Class Name</td>
+					<td>Course</td>
 					<td>Start Date</td>
 				
 				</tr>
@@ -36,6 +37,7 @@
 					<tr>
 						<td>${i.id }</td>
 						<td>${i.name }</td>
+						<td>${i.course.name }</td>
 						<td>${i.start_date }</td>
 					
 						<td><c:url var="action" value="/class-edit">

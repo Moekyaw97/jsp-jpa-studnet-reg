@@ -24,7 +24,7 @@ import entity.model.Class;
 
 
 
-@WebServlet({ "/regpage","/reg-add",  "/reg-edit", "/reg-delete" })
+@WebServlet(urlPatterns = { "/regpage","/reg-add",  "/reg-edit", "/reg-delete" },loadOnStartup=1)
 public class RegistrationController extends HttpServlet{
 
 

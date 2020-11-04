@@ -17,7 +17,7 @@ import controller.service.StudentService;
 
 import entity.model.Student;
 
-@WebServlet({ "/studentpage", "/student-add", "/student-edit", "/student-delete" })
+@WebServlet(urlPatterns = { "/studentpage", "/student-add", "/student-edit", "/student-delete" },loadOnStartup=1)
 public class StudentController extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
@@ -64,7 +64,7 @@ public class StudentController extends HttpServlet {
 			
 			stuService.save(s);
 			//set to request
-			req.setAttribute("student",s);
+			//req.setAttribute("student",s);
 			//redirect page
 			
 			resp.sendRedirect(req.getContextPath().concat("/studentpage"));
@@ -83,11 +83,11 @@ public class StudentController extends HttpServlet {
 			getServletContext().getRequestDispatcher("/student.jsp").forward(req,resp);
 		
 		}else if("/student-add".equals(path)||"/student-edit".equals(path)) {
-			//get data from db
+		
 			
 			List<Student> list=stuService.findAll();
 			
-			//set data to req
+		
 			req.setAttribute("student",list);
 			
 		 if("/student-edit".equals(path)) {

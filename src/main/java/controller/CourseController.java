@@ -15,7 +15,7 @@ import javax.servlet.http.HttpServletResponse;
 import controller.service.CourseService;
 import entity.model.Course;
 
-@WebServlet({  "/course-add","/coursepage", "/course-edit", "/course-delete" })
+@WebServlet(urlPatterns = {  "/course-add","/coursepage", "/course-edit", "/course-delete" },loadOnStartup=1)
 public class CourseController extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;

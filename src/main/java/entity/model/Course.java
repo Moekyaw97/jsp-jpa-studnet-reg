@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.util.List;
 
 import javax.persistence.*;
+import static javax.persistence.CascadeType.REMOVE;
 
 @Entity
 @NamedQuery(name = "Course.getAll", query = "SELECT c FROM Course c")
@@ -21,7 +22,7 @@ public class Course implements Serializable {
 	private String level;
 
 	
-	 @OneToMany(mappedBy = "course") 
+	 @OneToMany(mappedBy = "course", cascade = REMOVE) 
 	 private List<Class> classes;
 	 
 	 

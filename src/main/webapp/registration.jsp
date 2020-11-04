@@ -26,6 +26,8 @@
 			<thead>
 				<tr>
 					<td>ID</td>
+					<td>Name</td>
+					<td>Classname</td>
 					<td>Reg Date</td>
 					<td>Paid Amount</td>
 				</tr>
@@ -34,6 +36,8 @@
 				<c:forEach items="${registrations }" var="r">
 					<tr>
 						<td>${r.id }</td>
+						<td>${r.student.name }</td>
+						<td>${r.classes.name }</td>
 						<td>${r.regDate }</td>
 						<td>${r.paidAmt }</td>
 						<td><c:url var="action" value="/reg-edit">

@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.util.List;
 
 import javax.persistence.*;
+import static javax.persistence.CascadeType.REMOVE;
 
 
 
@@ -23,7 +24,7 @@ public class Student implements Serializable {
 	private String email;
 	private String phone;
 
-	@OneToMany(mappedBy = "student")
+	@OneToMany(mappedBy = "student", cascade = REMOVE)
 	private List<Registration> regs;
 	
 	
